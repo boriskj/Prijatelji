@@ -2,7 +2,18 @@ import db from '$lib/db';
 
 export const actions = {
 	addFriend: async (event) => {
-		console.log(await event.request.formData());
+		const form = await event.request.formData();
+		const name = form.get('name');
+		const age = form.get('age');
+		const interest = form.get('interest');
+
+    awit db.friend.create({
+    data:{ name:name
+      age: parseInt,
+      interest:interst
+    }
+
+    })
 	}
 };
 
